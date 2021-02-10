@@ -2,4 +2,4 @@
 
 création du site du projet d'année
 
-lien =>  INFO-F-308-G9.github.io 
+lien =>  [INFO-F-308-G9.github.io] 
