@@ -4,13 +4,58 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="index.css" />
         <title>Simulations De Population : Histoire numéro 1</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
     </head>
 
 <body>
     
     <header>
         <h1>Histoire 1 </h1>
-    <header>
+    </header>
+    
+    <canvas id="line-chart" width="400" height ="400"></canvas>
+    
+    <script>
+    let table;
+   
+    function preload() {
+      table = loadTable('test.csv', 'csv', 'header');
+      //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
+      //                  "csv", "header");
+      return table
+    }
+
+    function setup() {
+      table = loadTable('test.csv', 'csv', 'header');
+      const toNumbers = arr => arr.map(Number);
+      var array1 = toNumbers(table.getColumn("off.nbr"));
+      var array2 = toNumbers(table.getColumn("adlt.nbr"));
+      nbr_pop = array1.map(function (num, idx) {
+      return num + array2[idx];})
+      gen_pop = table.getColumn("generation");
+     
+    
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+          labels: data.gen_pop,
+          datasets: [{ 
+              data: data.nbr_pop,
+              label: "Africa",
+              borderColor: "#3e95cd",
+              fill: false
+            }
+          ]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'World population per region (in millions)'
+          }
+        }
+      }
+      );}}</script>
     
     <nav>
         <ul>
