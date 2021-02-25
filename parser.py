@@ -42,7 +42,7 @@ class Parser:
         for generation in self.dict_valeur['replicate'].keys():
             for parametre in self.dict_valeur.keys():
                 if parametre == "generation":
-                    self.fichier_sortant.write("{} ".format(compteur_de_generation))
+                    self.fichier_sortant.write("{};".format(compteur_de_generation))
                     compteur_de_generation += 5 if compteur_de_generation % 5 == 0 else 4
                 elif parametre != "replicate":
                     self.dict_valeur[parametre][generation] /= 6  # moyenne sur 6 réplicats
