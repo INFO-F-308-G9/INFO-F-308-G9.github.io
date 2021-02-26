@@ -81,3 +81,21 @@ ul {
   li a:hover {
     background-color: rgb(0, 0, 0);
   }
+
+.flex_container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.graph_1
+{
+    display: flex;
+    justify-content: center;
+
+}
+.main_flex
+{
+    display:flex;
+    flex-wrap: wrap;
+}

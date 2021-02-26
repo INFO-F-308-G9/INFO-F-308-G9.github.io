@@ -13,89 +13,106 @@
         <h1>Histoire 2 </h1>
     </header>
     
-    <canvas id="line-chart" height ="400" width ="400" ></canvas>
+    
     <script>
     let table;
-    let gen_pop=[]
-    let nbr_pop=[]
+    let gen_pop
+    let nbr_pop
     let myChart;
    
    function preload() {
-     table = loadTable('stats.csv', 'csv', 'header');
+     table = loadTable('second_story_moyenne.csv', 'csv', 'header');
      //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
      //                  "csv", "header");
+     table_1 = loadTable('patch.csv','csv','header');
    }
 
    function setup() {
      const toNumbers = arr => arr.map(Number);
-     var i ;
-     //for (i = 1; i < 7; i++) {
-    
-     //let table1 = table.findRows("1","replicate");
-     print(table.lenght);
-     var array1 = toNumbers(table.getColumn("off.nbr"));
-     var array2 = toNumbers(table.getColumn("adlt.nbr"));
-     nbr_pop.push(array1.map(function (num, idx) {
-     return num + array2[idx];}))
-     gen_pop.push(table.getColumn("generation"));
-    //}
-    print(nbr_pop)
+     var off_pop = toNumbers(table.getColumn("off.nbr"));
+     var adlt_pop = toNumbers(table.getColumn("adlt.nbr"));
+     nbr_pop =(off_pop.map(function (num, idx) {
+     return num + adlt_pop[idx];}))
+     gen_pop =(table.getColumn("generation"));
      
      var ctx = document.getElementById('line-chart');
       myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: [1,10,20,30,40,50,60,70,80,90,100],
-          datasets: [
-              { 
-              data: nbr_pop[0],
+          labels: gen_pop,
+          datasets: [              { 
+              data: nbr_pop,
               label: "Populations",
               borderColor: "#3e95cd",
+              backgroundColor : "#3e95cd ",
               fill: false
-            },
-        { 
-        data: nbr_pop[1],
-        label: "Asia",
-        borderColor: "#8e5ea2",
-        fill: false
-      }, 
-      { 
-        data: nbr_pop[2],
-        label: "Europe",
-        borderColor: "#3cba9f",
-        fill: false
-      }, 
-      { 
-        data: nbr_pop[3],
-        label: "Latin America",
-        borderColor: "#e8c3b9",
-        fill: false
-      }, 
-      { 
-        data: nbr_pop[4],
-        label: "North America",
-        borderColor: "#c45850",
-        fill: false
-      },
-      { 
-        data: nbr_pop[5],
-        label: "North America",
-        borderColor: "#c45850",
-        fill: false
-        }]},            
+              },
+              { 
+              data: off_pop,
+              label: "Nombre d'enfants",
+              borderColor: "#8e5ea2",
+              backgroundColor : "#8e5ea2",
+              fill: false}
+                    ]
+              },            
     
         options: {
           title: {
             display: true,
-            text: 'World population per region (in millions)'
+            text: "Nombre d'individus par génération d'une population"
           }
         }
       }
-      );}
+    );
+      var ctx_1 = document.getElementById('pie-chart');
+      extrate = table_1.getColumn("extrate")
+      print(extrate[ extrate.length-1])
+      myChart = new Chart(ctx_1, {
+        type: 'pie',
+        data: {
+          label:"Proportions de Patchs ",
+          datasets: [
+              { 
+              data: [extrate[ extrate.length-1],1-extrate[ extrate.length-1]],
+              backgroundColor : ["#c45850","#3cba9f"],
+              borderColor: ["#c45850","#3cba9f"],
+              fill: false
+            }],
+          labels: ["Eteints","Vivant"]
+       },            
     
+        options: {
+          title: {
+            display: true,
+            text: "Proportion de Patchs"
+          }
+        }
+      });
+
+    new Chart(document.getElementById("bar-chart"), {
+    //TODO additionner les colonnes des différents patch hommes et femmes, dans un array pop_patch, et push 8fois car 8 patch, reprendre le code au dessus.
+      type: 'bar',
+    data: {
+      labels: ["Patch 1", "Patch 2", "Patch 3", "Patch 4", "Patch 5","Patch 6","Patch 7","Patch 8","Patch 9"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850","#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+          data: table_1.getColumn("")
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+
+    };
     
-        
-        
        </script>
     <nav>
         <ul>
@@ -104,9 +121,6 @@
             <li><a href="story_2.html">Histoire 2</a></li>
         </ul>
     </nav>  
-
-
-
     <section>
 
         <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. 
@@ -117,5 +131,21 @@
         </p>
     </section>
 
+    <div class ="main_flex" style="width: 100%;height:1000px">
+    <div class = "graph_1" style="width: 100%;height:600px">
+      <div style="width: 80%;height: 10%">
+        <canvas id="line-chart"></canvas>
+      </div>
+    </div>
+
+      <div class = "flex_container" style="width: 100%;height:400px">  
+      <div style="width: 400px;height:100%">
+        <canvas id="pie-chart" ></canvas>
+        </div>
+      <div style="width: 400px;height:100%">
+          <canvas id="bar-chart" ></canvas>
+          </div>
+      </div>
+    </div>
 </body>
 </html>

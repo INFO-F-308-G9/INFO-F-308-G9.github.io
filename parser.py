@@ -37,17 +37,17 @@ class Parser:
                     ligne[i]).hex() != 'nan' else 0
 
     def __ecriture_fichier_sortant__(self):
-        self.fichier_sortant.write(self.nom_col_originale[10:])
+        self.fichier_sortant.write(self.nom_col_originale[10:].replace(' ',","))
         compteur_de_generation = 1
         for generation in self.dict_valeur['replicate'].keys():
             for parametre in self.dict_valeur.keys():
                 if parametre == "generation":
-                    self.fichier_sortant.write("{};".format(compteur_de_generation))
+                    self.fichier_sortant.write("{},".format(compteur_de_generation))
                     compteur_de_generation += 5 if compteur_de_generation % 5 == 0 else 4
                 elif parametre != "replicate":
                     self.dict_valeur[parametre][generation] /= 6  # moyenne sur 6 réplicats
                     # NB: nombre de réplicats adaptables en prenant le max de la valeur de la 1ere
-                    self.fichier_sortant.write("%.4e " % self.dict_valeur[parametre][generation])
+                    self.fichier_sortant.write("%.4e," % self.dict_valeur[parametre][generation])
             self.fichier_sortant.write("\n")
         self.fichier_sortant.close()
 
