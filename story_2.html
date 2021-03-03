@@ -21,92 +21,11 @@
       </ul>
    </nav> 
     
-    <!--<canvas id="line-chart" height ="400" width ="400" ></canvas>
-    <script>
-    let table;
-    let gen_pop=[]
-    let nbr_pop=[]
-    let myChart;
-   
-   function preload() {
-     table = loadTable('stats.csv', 'csv', 'header');
-     //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
-     //                  "csv", "header");
-   }
-
-   function setup() {
-     const toNumbers = arr => arr.map(Number);
-     var i ;
-     //for (i = 1; i < 7; i++) {
-    
-     //let table1 = table.findRows("1","replicate");
-     print(table.lenght);
-     var array1 = toNumbers(table.getColumn("off.nbr"));
-     var array2 = toNumbers(table.getColumn("adlt.nbr"));
-     nbr_pop.push(array1.map(function (num, idx) {
-     return num + array2[idx];}))
-     gen_pop.push(table.getColumn("generation"));
-    //}
-    print(nbr_pop)
-     
-     var ctx = document.getElementById('line-chart');
-      myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: [1,10,20,30,40,50,60,70,80,90,100],
-          datasets: [
-              { 
-              data: nbr_pop[0],
-              label: "Populations",
-              borderColor: "#3e95cd",
-              fill: false
-            },
-        { 
-        data: nbr_pop[1],
-        label: "Asia",
-        borderColor: "#8e5ea2",
-        fill: false
-      }, 
-      { 
-        data: nbr_pop[2],
-        label: "Europe",
-        borderColor: "#3cba9f",
-        fill: false
-      }, 
-      { 
-        data: nbr_pop[3],
-        label: "Latin America",
-        borderColor: "#e8c3b9",
-        fill: false
-      }, 
-      { 
-        data: nbr_pop[4],
-        label: "North America",
-        borderColor: "#c45850",
-        fill: false
-      },
-      { 
-        data: nbr_pop[5],
-        label: "North America",
-        borderColor: "#c45850",
-        fill: false
-        }]},            
-    
-        options: {
-          title: {
-            display: true,
-            text: 'World population per region (in millions)'
-          }
-        }
-      }
-      );}
-    
-       </script>
-    -->
 
     <div id="volet_clos">
 	    <div id="volet">
         <img src="images/infographie_reelle_h2_p1.jpg" alt="Premier parallèle avec les faits réels" height="1000" width="600"/>
+        <img src="images/infographie_reelle_h2_p2.jpg" alt="Premier parallèle avec les faits réels" height="1000" width="600"/>
 	
         <a href="#volet" class="ouvrir">Faits réels associés</a>
         <a href="#volet_clos" class="fermer">Histoire imaginaire</a>
@@ -115,13 +34,12 @@
 
 
     <p>
-      Voici l'histoire 2:<br />
+      <br />
       <img src="images/infographie_imaginaire_h2_p1.jpg" alt="Première partie de l'histoire 2" height="1000" width="600"/>
-      
    </p>
-
-    
-
+   <p>
+    <img src="images/infographie_imaginaire_h2_p2.jpg" alt="Première partie de l'histoire 2" height="1000" width="600"/>
+   </p>
 
     <section>
 
