@@ -137,3 +137,20 @@ ul {
 		#volet_clos:target #volet {
 			left: -625px;
 		}
+#line-chart {
+    position: relative;
+    top: -2000px;
+    left: 600px;
+}
+
+#pie-chart {
+    position: relative;
+    top: -2000px;
+    left: 600px;
+}
+
+#bar-chart {
+    position: relative;
+    top: -2400px;
+    left: 1000px;
+}
