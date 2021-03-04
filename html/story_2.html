@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="../css/index.css" />
         <title>Simulations De Population : Histoire numéro 2</title>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
         <script src ="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
@@ -27,10 +27,10 @@
     let mal_adlt = ["adlt.mal.p1","adlt.mal.p2","adlt.mal.p3","adlt.mal.p4","adlt.mal.p5","adlt.mal.p6","adlt.mal.p7","adlt.mal.p8","adlt.mal.p9"];
    
    function preload() {
-     table = loadTable('second_story_moyenne.csv', 'csv', 'header');
+     table = loadTable('../csv/second_story_moyenne.csv', 'csv', 'header');
      //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
      //                  "csv", "header");
-     table_1 = loadTable('patch.csv','csv','header');
+     table_1 = loadTable('../csv/patch.csv','csv','header');
    }
 
    function setup() {
@@ -186,7 +186,7 @@
        </script>
     <nav>
         <ul>
-            <li><a href="index.html">Intro</a></li>
+            <li><a href="../index.html">Intro</a></li>
             <li><a href="story_1.html">Histoire 1</a></li>
             <li><a href="story_2.html">Histoire 2</a></li>
         </ul>
