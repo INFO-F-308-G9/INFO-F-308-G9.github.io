@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="index.css" />
-        <title>Simulations De Population : Histoire numéro 2</title>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-        <script src ="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="index.css"/>
+    <title>Simulations De Population : Histoire numéro 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+</head>
 <body>
-    
-    <header>
-        <h1>Histoire 2 </h1>
-    </header>
-    
 
-    <script>
+<header>
+    <h1>Histoire 2 </h1>
+</header>
+
+
+<script>
     let table;
     let gen_pop
     let nbr_pop
@@ -113,70 +113,76 @@
 
     };
 
-       </script>
-    <nav>
-      <ul>
-          <li><a href="index.html">Introduction</a></li>
-          <li><a href="story_1.html">Histoire 1</a></li>
-          <li><a href="story_2.html">Histoire 2</a></li>
-      </ul>
-   </nav>
+
+</script>
+<nav>
+    <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="story_1.html">Histoire 1</a></li>
+        <li><a href="story_2.html">Histoire 2</a></li>
+    </ul>
+</nav>
 
 
-    <div id="volet_clos">
-	    <div id="volet">
-        <img src="images/infographie_reelle_h2_p1.jpg" alt="Premier parallèle avec les faits réels" height="1000" width="600"/>
-        <img src="images/infographie_reelle_h2_p2.jpg" alt="Premier parallèle avec les faits réels" height="1000" width="600"/>
+<div id="volet_clos">
+    <div id="volet">
+        <img src="images/infographie_reelle_h2_p1.jpg" alt="Premier parallèle avec les faits réels" height="1000"
+             width="600"/>
+        <img src="images/infographie_reelle_h2_p2.jpg" alt="Premier parallèle avec les faits réels" height="1000"
+             width="600"/>
 
         <a href="#volet" class="ouvrir">Faits réels associés</a>
         <a href="#volet_clos" class="fermer">Histoire imaginaire</a>
-	    </div>
     </div>
+</div>
 
 
-    <p>
-      <br />
-      <img src="images/infographie_imaginaire_h2_p1.jpg" alt="Première partie de l'histoire 2" height="1000" width="600"/>
-   </p>
-   <p>
+<p>
+    <br/>
+    <img src="images/infographie_imaginaire_h2_p1.jpg" alt="Première partie de l'histoire 2" height="1000" width="600"/>
+</p>
+<p>
     <img src="images/infographie_imaginaire_h2_p2.jpg" alt="Première partie de l'histoire 2" height="1000" width="600"/>
-   </p>
+</p>
 
-    <section>
+<section>
 
-        <h3>
-          Voici quelques liens à suivre si vous désirez en apprendre plus sur ces espèces en danger.
-          Par catégorie, ces espèces ont principalement été victimes...
-        </h3>
-        <p>...de la déforestation.</p>
-        <a href="https://www.larousse.fr/encyclopedie/vie-sauvage/tigre/178156">Le tigre</a>
-        <p>...de la pollution.</p>
-        <a href="https://www.futura-sciences.com/planete/definitions/zoologie-anguille-europeenne-7725/">L'anguille européenne</a>
-        <p>...de l'introduction d'une autre espèce.</p>
-        <a href=" https://www.iguanafoundation.org/what-we-support/rock-iguanas/jamaican-rock-iguana/">L'iguane terrestre de la Jamaïque,</a>
-        <p></p>
-        <a href="http://www.oiseaux-birds.com/fiche-foudi-de-maurice.html">le foudi de Maurice</a>
-        <p></p>
-        <a href="https://www.tahiti-infos.com/Le-monarque-de-Fatu-Hiva-une-espece-en-voie-d-extinction_a143244.html">le monarque de Fatu Hiva</a>
+    <h3>
+        Voici quelques liens à suivre si vous désirez en apprendre plus sur ces espèces en danger.
+        Par catégorie, ces espèces ont principalement été victimes...
+    </h3>
+    <p>...de la déforestation.</p>
+    <a href="https://www.larousse.fr/encyclopedie/vie-sauvage/tigre/178156">Le tigre</a>
+    <p>...de la pollution.</p>
+    <a href="https://www.futura-sciences.com/planete/definitions/zoologie-anguille-europeenne-7725/">L'anguille
+        européenne</a>
+    <p>...de l'introduction d'une autre espèce.</p>
+    <a href=" https://www.iguanafoundation.org/what-we-support/rock-iguanas/jamaican-rock-iguana/">L'iguane terrestre de
+        la Jamaïque,</a>
+    <p></p>
+    <a href="http://www.oiseaux-birds.com/fiche-foudi-de-maurice.html">le foudi de Maurice</a>
+    <p></p>
+    <a href="https://www.tahiti-infos.com/Le-monarque-de-Fatu-Hiva-une-espece-en-voie-d-extinction_a143244.html">le
+        monarque de Fatu Hiva</a>
 
 
-    </section>
+</section>
 
-    <div class ="main_flex" style="width: 100%;height:1000px">
-    <div class = "graph_1" style="width: 100%;height:600px">
-      <div style="width: 80%;height: 10%">
-        <canvas id="line-chart"></canvas>
-      </div>
-    </div>
-
-      <div class = "flex_container" style="width: 100%;height:400px">
-      <div style="width: 400px;height:100%">
-        <canvas id="pie-chart" ></canvas>
+<div class="main_flex" style="width: 100%;height:1000px">
+    <div class="graph_1" style="width: 100%;height:600px">
+        <div style="width: 80%;height: 10%">
+            <canvas id="line-chart"></canvas>
         </div>
-      <div style="width: 400px;height:100%">
-          <canvas id="bar-chart" ></canvas>
-          </div>
-      </div>
     </div>
+
+    <div class="flex_container" style="width: 100%;height:400px">
+        <div style="width: 400px;height:100%">
+            <canvas id="pie-chart"></canvas>
+        </div>
+        <div style="width: 400px;height:100%">
+            <canvas id="bar-chart"></canvas>
+        </div>
+    </div>
+</div>
 </body>
 </html>
