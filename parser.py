@@ -37,7 +37,7 @@ class Parser:
                     ligne[i]).hex() != 'nan' else 0
 
     def __ecriture_fichier_sortant__(self):
-        self.fichier_sortant.write(self.nom_col_originale[10:].replace(' ',","))
+        self.fichier_sortant.write(self.nom_col_originale[10:].replace(' ', ","))
         compteur_de_generation = 1
         for generation in self.dict_valeur['replicate'].keys():
             for parametre in self.dict_valeur.keys():
