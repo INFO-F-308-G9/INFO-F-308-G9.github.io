@@ -1,12 +1,13 @@
 /* On travaille sur la balise body, donc sur TOUTE la page */
 body
 {
-    background-color: rgb(41, 41, 41); /* Le fond de la page sera noir */
-    color:rgb(203,171,110); /* Le texte de la page sera blanc */
+    background-color: rgb(255, 255, 255); /* Le fond de la page sera noir */
+    color:rgb(90, 114, 86); /* Le texte de la page sera blanc */
     font-size: 1.2em;
+    font-family:Helvetica ;
 }
 
-#Refgreen
+.Refgreen
 {
     color : rgb(43, 143, 40);
 
@@ -34,14 +35,15 @@ p
 
 h1
 {
-    font-weight: bold;
+  color :rgb(90, 114, 86);
+  font-weight: bold;
     text-align: center;
     font-size: 2.4em;
 }
 
 h2
 {
-    
+  color :rgb(90, 114, 86)  ;
     text-decoration:underline;
 }
 
@@ -76,7 +78,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(90, 114, 86);
   }
   
   li {
@@ -86,7 +88,7 @@ ul {
   li a {
     font-style: italic ;
     display: block;
-    color: rgb(203,171,110);
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -94,7 +96,7 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(73, 70, 71);
   }
 
 .main_flex
@@ -150,7 +152,7 @@ ul {
 			display: none;
 		}
 		#volet:target {
-			left: -2px;
+			left: 700px;
 		}
 
 
