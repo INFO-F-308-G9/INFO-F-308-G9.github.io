@@ -4,7 +4,7 @@ création du site du projet d'année
 
 lien =>  [1]
 
-[1] :  https://INFO-F-308-G9.github.io 
+[1] : licornes-simulations.github.io
 
 
 
