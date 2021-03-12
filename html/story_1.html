@@ -6,6 +6,7 @@
     <title>Simulations De Population : Histoire numéro 1</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+    <script src="../js/story_1.js"></script>
 </head>
 
 <body>
@@ -22,52 +23,9 @@
     </ul>
 </nav>
 
-<canvas id="line-chart" width="400" height="400"></canvas>
 
-<script>
-    let table;
-   
-    function preload() {
-      table = loadTable('test.csv', 'csv', 'header');
-      //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
-      //                  "csv", "header");
-      return table
-    }
-
-    function setup() {
-      table = loadTable('../csv/test.csv', 'csv', 'header');
-      const toNumbers = arr => arr.map(Number);
-      var array1 = toNumbers(table.getColumn("off.nbr"));
-      var array2 = toNumbers(table.getColumn("adlt.nbr"));
-      nbr_pop = array1.map(function (num, idx) {
-      return num + array2[idx];})
-      gen_pop = table.getColumn("generation");
-     
-    
-      new Chart(document.getElementById("line-chart"), {
-        type: 'line',
-        data: {
-          labels: data.gen_pop,
-          datasets: [{ 
-              data: data.nbr_pop,
-              label: "Africa",
-              borderColor: "#3e95cd",
-              fill: false
-            }
-          ]
-        },
-        options: {
-          title: {
-            display: true,
-            text: 'World population per region (in millions)'
-          }
-        }
-      }
-      );}}
-
-
-</script>
-
+<div class="row">
+<div class="column1" >
 <div id="volet_clos">
     <div id="volet">
         <img src="../images/infographie_reelle_h1_p1.jpg" alt="Premier parallèle avec les faits réels" height="1000"
@@ -90,6 +48,26 @@
     <img src="../images/infographie_imaginaire_h1_p2.jpg" alt="Première partie de l'histoire 2" height="1000"
          width="600"/>
 </p>
+</div> 
+
+<div class="column2">
+  <div class="main_flex" >
+        <div >
+            <canvas id="line-chart"></canvas>
+        </div>
+        
+        <div >
+            <canvas id="line1-chart"></canvas>
+        </div>
+        
+        <div >
+            <canvas id="pie-chart"></canvas>
+        </div>
+
+  </div>
+</div> 
+
+</div><!-- ferme le row -->
 
 
 <section>
