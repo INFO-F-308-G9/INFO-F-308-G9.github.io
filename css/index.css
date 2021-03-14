@@ -28,6 +28,16 @@ body
     padding: 10px;
        
 }
+.column11 {
+  flex: 50%;
+  padding: 10px;
+     
+}
+.column22 {
+  flex: 50%;
+  padding: 10px;
+     
+}
 p
 {
     text-align: justify;
