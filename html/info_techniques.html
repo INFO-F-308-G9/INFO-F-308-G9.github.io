@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <title>Simulations De Population : Informations techniques </title>
+</head>
+
+<body>
+    <header>
+        <h1>Informations techniques </h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="../index.html">Introduction</a></li>
+            <li><a href="story_1.html">Histoire 1</a></li>
+            <li><a href="story_2.html">Histoire 2</a></li>
+            <li><a href="info_techniques">Informations techniques</a></li>
+        </ul>
+    </nav>
+
+    <h2>Informations techniques</h2>
+    <p>
+        Vous trouverez ci-dessous des explications concernant certains concepts biologiques qui apparaissent sur ce site ou dans nos vidéos. 
+        Nous espérons que celles-ci vous permettront de mieux comprendre les différents graphiques présentés sur les autres pages, 
+        et éventuellement d'approfondir certains passages de nos vidéos, disponibles sur le site du Printemps des Sciences.
+    </p>
+
+    <h4>FITNESS </h4>
+     <p>La fitness est la représentation du bon état de santé d'un individu. Sur le logiciel Nemo, elle est calculée à partir de tous les traits de l'individu.
+         Une mauvaise fitness peut être causée par des mutations individuelles ou un manque de diversité du matériel génétique entre les deux parents.
+         En effet, si les deux parents d'un individu ont respectivement les deux allèles AA et AB, il est relativement probable que leur enfant héritera des allèles
+         AA. Si cet allèle A se trouvait être une mutation récessive donnant lieu à une maladie mortelle, la similitude du matériel génétique des parents aura
+         porté préjudice à leur progéniture.
+    </p>
+
+    <h4>MATERIEL GENETIQUE </h4>
+     <p>Sans trop nous plonger dans les détails biologiques, nous parlons de matériel génétique pour désigner l'ensemble des informations contenues
+        dans les gènes d'un individu. Ces gènes sont en grande partie responsables de la fitness d'un individu, et donc partiellement responsable de sa survie. 
+        Dans nos simulations, nous avons représenté cela avec le LCE "selection" qui, à chaque génération, élimine une certaine proportion des nouveaux nés qui 
+        ont une fitness trop mauvaise.   
+    </p>
+
+    <h4>POPULATION/PATCH </h4>
+    <p> Nous parlons souvent de populations dans nos vidéos. Dans ce contexte, nous désignons par ce terme un ensemble d'individus d'une espèce
+        donnée qui vivent tous ensemble sur une zone géographique relativement réduite. Lorsque notre espèce est répartie en plusieurs populations, 
+        nous utilisons souvent le mot "patch".</p>
+
+    <h4>PREDATION </h4>
+    <p>
+        La prédation est le fait qu'une espèce, nommée prédateur, se nourrit d'une autre espèce, appelée proie. 
+        Par exemple, le chat est un prédateur de la souris.
+    </p>
+    
+    <h4>SEUIL D'EXTINCTION </h4>
+    <p> Dans le contexte de ce projet, nous définissons le seuil d'extinction comme le nombre minimal d'individus nécessaire pour qu'une espèce 
+        puisse à nouveau prospérer et croître. En effet, comme discuté dans la section fitness, la diversité de matériel génétique est un 
+        critère déterminant de la fitness de nos individus et donc de leur survie individuelle. Or, la survie d'une espèce tient bien évidemment à 
+        la survie de ses individus. Ainsi, des recherches montrent qu'il y a une différence entre la population recensée (nombre total d'individus) 
+        et la population effective (nombre d'individus qui sont intéressants du point de vue de la reproduction). Cette dernière est calculée en 
+        tenant notamment compte de la répartition mâle-femelle et du fait que tous les individus n'auront pas la même chance de se reproduire.
+        Par exemple, même s'il semble à première vue qu'une vingtaine de licornes suffirait à repeupler la planète, la population effective 
+        serait inférieure au nombre d'individus restants. En ajoutant à cela le probable manque de variété du matériel génétique, le seuil d'extinction
+        serait déjà atteint, et la population condamnée sur le long terme.
+    </p>
+
+    <h4>TRAIT </h4>
+    <p> Un trait est une caractéristique d'un organisme et dépend des gènes et de leur interraction avec leur environement. 
+        Un trait humain serait la couleur des yeux, par exemple. </p>
+    
+
+
+
+    <h2>Paramètres d'une population: spécifications relatives à Nemo </h2>
+    <p>
+        Vous trouverez ci-dessous des explications sur certains paramètres utilisés dans Nemo pour caractériser une population.
+    </p>
+
+    <h4>AGE </h4>
+    <p>
+        Le logiciel Nemo ne tient compte que deux âges possibles : enfant et adulte. Un enfant est un individu qui vient de naître. Il subit la selection (cf.
+        matériel génétique), la migration, le vieillissement (passe à l'état adulte) et l'extinction. Un adulte est un individu qui a déjà subi un LCE de vieillissement. Il peut
+        se reproduire, subit le vieillissement (meurt) et l'extinction.
+    </p>
+
+    <h4>CYCLE DE VIE/LCE</h4>
+    <p>
+        A chaque génération, Nemo applique une série déterminée d'évènements sur tous les patchs. Pour les deux simulations, nous avons choisi les sept 
+        mêmes étapes: breed_selection, save_stats, disperse, aging, save_files, extinction. Toutefois, même si tous ces évènements se déroulent obligatoirement
+        à chaque génération, il est possible de faire varier leurs paramètres de génération en génération pour qu'ils n'aient pas d'effet. 
+        Par exemple, le taux de migration de la première histoire est mis à zéro avant la 150ème génération, et après la 200ème.
+    </p>
+    <p>
+        breed_selection : Les enfants sont produits à partir du mode de reproduction choisi et de ses paramètres dont la fécondité. Directement après,
+        les enfants juste nés qui n'ont pas une fitness suffisamment bonne sont retirés des patchs. Nous avons utilisés ce LCE pour avoir un renouvellement
+        de génération et que la survie de l'espèce dépende en partie de la fitness de ses individus.
+    </p>
+    <p>
+        save_stats : Les différentes statistiques demandées sont rassemblées dans un fichier. Cette étape est placée avant le vieillissement pour avoir 
+        les statistiques des enfants et des adultes. Ces données nous ont permis de construire les graphiques qui se trouvent sur les pages des histoires
+        une et deux. 
+    </p>
+    <p>
+        disperse : Les enfants migrent dans les patchs voisins selon les paramètres de migrations choisis. Nous avons utilisé cette migration pour tuer Une
+        partie des enfants (première histoire) et pour réellement montrer une migration vers d'autres patchs (seconde histoire).
+    </p>
+    <p>
+        aging : Les enfants deviennent des adultes et les adultes meurent. Celà permet d'avoir un renouvellement de générations imitant la vie réelle.
+        Toutefois, le nombre d'individus qui passent de l'enfance à l'âge adulte est restreint par la capacité maximale.
+        Les enfants, tirés au hasard (mâle et femelle séparemment), grandissent jusqu'à ce que le nombre maximal d'adultes soit atteint. Les enfants restants
+        meurent. Ce mécanisme n'est pas illustré dans nos histoires, mais on peut aisément y voir un sens réaliste; en effet, le nombre d'enfants naissant à chaque 
+        génération et, a fortiori, le nombre de ceux qui survivent jusqu'à l'âge adulte, est conditionné par les conditions de vie et l'environnement de 
+        l'espèce à un moment spécifique. Ce décès d'une partie des enfants est donc plus représentatif d'un environement aux ressources limités que les
+        paramètres constants que Nemo propose pour la reproduction.
+    </p>
+    <p>
+        save_files : Les fichiers de statistiques sont exportés et sauvegardés sur l'ordinateur qui fait tourner le logiciel.
+    </p>
+    <p>
+        extinction : Cette étape permet de tuer tout ou une proportion de la population de chaque patch, indiféremment de l'âge des individus. En faisant
+        varier les taux et proportion d'extinction, nous avons pû utiliser ce LCE pour tuer une partie des licornes de la deuxième histoire, lorsque le lac
+        est pollué et qu'ensuite, les hirondelles les privent en plus de nourriture. 
+    </p>
+
+    <h4>FECONDITE </h4>
+    <p>
+        Dans le logiciel Nemo, la fécondité est le nombre d'enfant qu'une femelle engendre par génération. Autant que faire se peut, nous avons donné à nos 
+        licornes des fécondités basées sur celles d'animaux réels que nous présentons en parallèle de nos histoires imaginaires. Ainsi, pour l'histoire 1,
+        entre les générations 0 et 200, c'est la fécondité des gnous qui est appliquée. Et pour le reste de la simulation, celle des rhinocéros. Pour 
+        l'histoire 2, s'enchaînent les fécondités des tigres, anguille, puis foudi de Maurice. Etant donné que Nemo fonctionne par génération, nous avons
+        dû estimer au mieux combien d'enfants une femelle aurait engendré au bout d'un certain nombre d'années, en fonction de la maturité sexuelle de chaque
+        espèce, du temps de gestation, du nombre d'enfants par portée,... Nous n'avons pas tenu compte des petit-enfants et progéniture de génération suivante
+        dans notre fécondité (au bout d'une génération, une femelle aura engendré un certain nombre d'enfants, et on considère que ces enfants n'en ont pas 
+        déjà eu à leur tour).
+    </p>
+
+    <h4>MIGRATION </h4>
+    <p>
+        La migration est le déplacement d'individus d'un patch à l'autre. Pour la première histoire, nous n'avions qu'un patch mais avons utilisé la migration
+        (via le paramètre dispersal model et le LCE disperse) pour tuer une partie de notre descendance. En effet, la migration de Nemo ne s'applique que sur 
+        les jeunes (offspring) qui viennent de naître, et pas sur leurs ainés. En utilisant une certaine configuration de migration proposée par Nemo (lattice
+        model avec absorbing boundaries), dans laquelle les individus qui quittent le patch pour se rendre dans le "vide" voisin disparaissent de la simulation,
+         nous avons pu faire mourir une partie des licorneaux.
+    </p>
+    <p>
+        Dans la seconde histoire, c'est le même type de dispersion qui a été choisi (lattice model), mais avec différentes réactions pour les patchs aux
+        extrêmités en fonction des évènements en cours; au départ, elles sont réfélchissantes (reflective boundaries), c'est-à-dire que les jeunes des
+         patchs aux extrêmité ne peuvent pas migrer vers le vide, mais seulement vers leurs patchs voisins (ce qui implique qu'un patch se trouvant dans le
+         coin de la configuration en matrice n'a que deux possibilités de mouvements, au lieu des quatre possibles pour le patch central). Mais à partir de 
+         l'arrivée des hirondelles qui mangent une partie des ressources des licornes, les frontières ont été mises à absorbantes, comme dans la première
+         histoire, à nouveau pour représenter une mortalité chez les licorneaux.
+    </p>
+
+    <h4>MODE DE REPRODUCTION</h4>
+    <p>
+        Le mode de reproduction est la façon dont les mâles et les femelles d'une espèce intéragissent pour choisir leur partenaire. Dans Nemo, sous le nom de 
+        mating system, nous avons choisi d'appliquer la polygynie. Ce mode de reproduction se caractérise par le fait qu'un seul mâle se reproduise avec toutes
+        les femelles de son patch. Considérant la licorne comme un équidé, nous avons choisi ce mode de reproduction car c'est celui des cheveaux et des cerfs.
+    </p>
+
+</section>
+
+</body>
