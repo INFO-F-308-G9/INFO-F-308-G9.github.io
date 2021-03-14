@@ -11,7 +11,7 @@ let mal_off= ["off.mal.p1","off.mal.p2","off.mal.p3","off.mal.p4","off.mal.p5","
 let mal_adlt = ["adlt.mal.p1","adlt.mal.p2","adlt.mal.p3","adlt.mal.p4","adlt.mal.p5","adlt.mal.p6","adlt.mal.p7","adlt.mal.p8","adlt.mal.p9"];
 
 function preload() {
- table = loadTable('../csv/second_story_moyenne.csv', 'csv', 'header');
+ table = loadTable('../csv/disp1400_extinct210_moyenne.csv', 'csv', 'header');
  //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
  //                  "csv", "header");
  table_1 = loadTable('../csv/patch.csv','csv','header');
