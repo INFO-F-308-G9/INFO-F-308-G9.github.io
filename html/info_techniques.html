@@ -102,7 +102,7 @@
         une et deux. 
     </p>
     <p>
-        disperse : Les enfants migrent dans les patchs voisins selon les paramètres de migrations choisis. Nous avons utilisé cette migration pour tuer Une
+        disperse : Les enfants migrent dans les patchs voisins selon les paramètres de migrations choisis. Nous avons utilisé cette migration pour tuer une
         partie des enfants (première histoire) et pour réellement montrer une migration vers d'autres patchs (seconde histoire).
     </p>
     <p>
@@ -111,14 +111,14 @@
         Les enfants, tirés au hasard (mâle et femelle séparemment), grandissent jusqu'à ce que le nombre maximal d'adultes soit atteint. Les enfants restants
         meurent. Ce mécanisme n'est pas illustré dans nos histoires, mais on peut aisément y voir un sens réaliste; en effet, le nombre d'enfants naissant à chaque 
         génération et, a fortiori, le nombre de ceux qui survivent jusqu'à l'âge adulte, est conditionné par les conditions de vie et l'environnement de 
-        l'espèce à un moment spécifique. Ce décès d'une partie des enfants est donc plus représentatif d'un environement aux ressources limités que les
+        l'espèce à un moment spécifique. Ce décès d'une partie des enfants est donc plus représentatif d'un environnement aux ressources limitées que les
         paramètres constants que Nemo propose pour la reproduction.
     </p>
     <p>
         save_files : Les fichiers de statistiques sont exportés et sauvegardés sur l'ordinateur qui fait tourner le logiciel.
     </p>
     <p>
-        extinction : Cette étape permet de tuer tout ou une proportion de la population de chaque patch, indiféremment de l'âge des individus. En faisant
+        extinction : Cette étape permet de tuer toute ou une proportion de la population de chaque patch, indiféremment de l'âge des individus. En faisant
         varier les taux et proportions d'extinction, nous avons pû utiliser ce LCE pour tuer une partie des licornes de la deuxième histoire, lorsque le lac
         est pollué et qu'ensuite, les hirondelles les privent en plus de nourriture. 
     </p>
@@ -128,7 +128,7 @@
         Dans le logiciel Nemo, la fécondité est le nombre d'enfant qu'une femelle engendre par génération. Autant que faire se peut, nous avons donné à nos 
         licornes des fécondités basées sur celles d'animaux réels que nous présentons en parallèle de nos histoires imaginaires. Ainsi, pour l'histoire 1,
         entre les générations 0 et 200, c'est la fécondité des gnous qui est appliquée. Et pour le reste de la simulation, celle des rhinocéros. Pour 
-        l'histoire 2, s'enchaînent les fécondités des tigres, anguilles, puis foudis de Maurice. Etant donné que Nemo fonctionne par génération, nous avons
+        l'histoire 2, s'enchaînent les fécondités du tigre, de l'anguille, puis du foudi de Maurice. Etant donné que Nemo fonctionne par génération, nous avons
         dû estimer au mieux combien d'enfants une femelle aurait engendré au bout d'un certain nombre d'années, en fonction de la maturité sexuelle de chaque
         espèce, du temps de gestation, du nombre d'enfants par portée,... Nous n'avons pas tenu compte des petit-enfants et progéniture de génération suivante
         dans notre fécondité (au bout d'une génération, une femelle aura engendré un certain nombre d'enfants, et on considère que ces enfants n'en ont pas 
@@ -145,8 +145,8 @@
     </p>
     <p>
         Dans la seconde histoire, c'est le même type de dispersion qui a été choisi (lattice model), mais avec différentes réactions pour les patchs aux
-        extrêmités en fonction des évènements en cours; au départ, elles sont réfélchissantes (reflective boundaries), c'est-à-dire que les jeunes des
-         patchs aux extrêmité ne peuvent pas migrer vers le vide, mais seulement vers leurs patchs voisins (ce qui implique qu'un patch se trouvant dans le
+        extrêmités en fonction des évènements en cours; au départ, elles sont réfléchissantes (reflective boundaries), c'est-à-dire que les jeunes des
+         patchs aux extrêmités ne peuvent pas migrer vers le vide, mais seulement vers leurs patchs voisins (ce qui implique qu'un patch se trouvant dans le
          coin de la configuration en matrice n'a que deux possibilités de mouvements, au lieu des quatre possibles pour le patch central). Mais à partir de 
          l'arrivée des hirondelles qui mangent une partie des ressources des licornes, les frontières ont été mises à absorbantes, comme dans la première
          histoire, à nouveau pour représenter une mortalité chez les licorneaux.
